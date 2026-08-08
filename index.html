@@ -3,22 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirecting...</title>
+  <title>Opening WhatsApp...</title>
 
   <script>
-    // Replace with your number (include country code, no + or spaces)
-    const phoneNumber = "919800863595";
-
-    // Replace with your message (URL encoded)
+    const phone = "919800863595";
     const message = "Bhai Python basics";
 
-    const whatsappURL = `whatsapp://send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
-    // Redirect immediately
-    window.location.href = whatsappURL;
+    const app = `whatsapp://send?phone=${phone}&text=${encodeURIComponent(message)}`;
+    const web = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+    // Try to open WhatsApp app
+    window.location.href = app;
+
+    // Instant fallback (almost no delay)
+    setTimeout(() => {
+      window.location.href = web;
+    }, 1);
   </script>
 </head>
 
 <body style="display:flex; justify-content:center; align-items:center; height:100vh; font-family:Arial;">
-  <p>Redirecting to WhatsApp...</p>
+  <p>Opening WhatsApp...</p>
 </body>
 </html>
