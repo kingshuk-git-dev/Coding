@@ -12,8 +12,7 @@
     // Replace with your message (URL encoded)
     const message = "Bhai Python basics";
 
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-
+    const whatsappURL = `whatsapp://send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
     // Redirect immediately
     window.location.href = whatsappURL;
   </script>
