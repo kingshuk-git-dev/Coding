@@ -10,7 +10,7 @@
     const phoneNumber = "919800863595";
 
     // Replace with your message (URL encoded)
-    const message = "Bhai python";
+    const message = "Bhai python basics";
 
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
